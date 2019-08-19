@@ -1,0 +1,25 @@
+//- index.pug
+head
+  title= title
+
+  link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+html
+  div(class="container w-100")
+    div(class="main-div")
+      h2(class="center") #{title}
+    each poll in items
+      h4 #{poll.survey_house}
+        link(src=poll.url)      
+      div(class="container")
+        each question in poll.poll_questions
+          div #{question.text}
+          for subpopulation in question.sample_subpopulations
+            b #{subpopulation.name}
+            ul
+              each response in subpopulation.responses
+                li #{response.pollster_label} #{response.value}
+            
+          
+              
+  script(src="./js/anime.min.js")
+  script(src="./js/animateStuff.js")
