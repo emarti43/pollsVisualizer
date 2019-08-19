@@ -3,23 +3,26 @@ head
   title= title
 
   link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+  link(rel="stylesheet" href="./css/styles.css")
 html
-  div(class="container w-100")
-    div(class="main-div")
-      h2(class="center") #{title}
+  div(class="container") 
+    h2(class="center") #{title}
     each poll in items
-      h4 #{poll.survey_house}
-        link(src=poll.url)      
-      div(class="container")
-        each question in poll.poll_questions
-          div #{question.text}
-          for subpopulation in question.sample_subpopulations
-            b #{subpopulation.name}
-            ul
-              each response in subpopulation.responses
-                li #{response.pollster_label} #{response.value}
-            
+      div
+        h4 #{poll.survey_house}
+          link(src=poll.url)      
+          each question in poll.poll_questions
+            h5 #{question.text}
+            for subpopulation in question.sample_subpopulations
+              b #{subpopulation.name}
+              ul
+                each response in subpopulation.responses
+                  li(class="subpopulation-response") 
+                    div 
+                      h6 #{response.pollster_label} 
+                      div(class="progress" )
+                        div(class="progress-bar" role ="progressbar" aria-valuenow=response.value aria-valuemin="0" aria-valuemax= subpopulation.responses.map(obj => obj.value).reduce((acc, response) => acc + response)) #{response.value}
           
-              
+  script(src="https://code.jquery.com/jquery-3.4.1.min.js")
   script(src="./js/anime.min.js")
   script(src="./js/animateStuff.js")
