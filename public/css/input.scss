@@ -1,5 +1,5 @@
 $theme-colors: (
-  "primary": #ff0000,
+  "primary": #0000ff,
   "danger": #ff4136
 );
 
@@ -11,4 +11,12 @@ $theme-colors: (
 
 .response-bar {
   color: white;
+}
+
+.disapprove {
+  color: #ff0000;
+}
+
+.approve {
+  color: #00ff00;  
 }

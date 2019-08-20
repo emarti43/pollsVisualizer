@@ -4,6 +4,13 @@ anime({
   translateX: 0,
   duration: 600,
 });
+anime({
+  targets: '.animated-poll',
+  height: '100%',
+  easing: 'easeInOutQuad',
+  direction: 'alternate',
+  loop: true,
+})
 
 document.addEventListener('DOMContentLoaded', function() {
   let progressBars = document.querySelectorAll('.progress-bar');

@@ -8,13 +8,14 @@ app.use(express.static('public'));
 
 app.set('view engine', 'pug');
 app.get('/:cursor?', (req, res) => {
-  let data = {};
+  let cursor = '';
   if(!!req.params.cursor) {
-    data = { cursor: req.params.cursor };
-    console.log('yeah');
+    console.log(`cursor from params${req.params.cursor}`);
+    cursor = req.params.cursor;
   }
-  axios.get(baseURL + 'polls', data)
+  axios.get(baseURL + `polls?cursor=${cursor}`)
   .then(response => {
+    console.log(`cursor from response ${response.data.next_cursor}`);
     res.render('index', {
       title: 'Polls',
       items: response.data.items,
