@@ -19,3 +19,20 @@ document.addEventListener('DOMContentLoaded', function() {
     element.style.width = `${barValue}%`;
   });
 });
+
+let listButtons = document.getElementsByClassName('show-btn')
+for(let button of listButtons) {
+  button.addEventListener('click', function(event) {
+    let chunk = event.currentTarget.parentElement.parentElement;
+    console.log(`${chunk.id}`)
+    if (parseInt(chunk.id) < listButtons.length) {
+      let nextChunk = document.getElementById(parseInt(chunk.id) + 1);
+      nextChunk.classList.remove('d-none');
+      if (parseInt(chunk.id) === listButtons.length - 2) {
+        nextChunk.getElementsByClassName('show-btn')[0].classList.add('d-none');
+        document.getElementById('pagination').classList.remove('d-none');
+      }
+    }
+    event.currentTarget.classList.add('d-none');
+  });
+}

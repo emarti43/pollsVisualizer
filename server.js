@@ -7,6 +7,15 @@ const baseURL = 'https://elections.huffingtonpost.com/pollster/api/v2/'
 app.use(express.static('public'));
 
 app.set('view engine', 'pug');
+
+function chunkArray(array, chunkSize) {
+  if(array.length == 0) {
+    return [];
+  }else {
+    return [array.slice(0, chunkSize)].concat(chunkArray(array.slice(chunkSize, array.length), chunkSize));
+  }
+}
+
 app.get('/:cursor?', (req, res) => {
   let cursor = '';
   if(!!req.params.cursor) {
@@ -15,10 +24,10 @@ app.get('/:cursor?', (req, res) => {
   }
   axios.get(baseURL + `polls?cursor=${cursor}`)
   .then(response => {
-    console.log(`cursor from response ${response.data.next_cursor}`);
+    response.data.items
     res.render('index', {
       title: 'Polls',
-      items: response.data.items,
+      items: chunkArray(response.data.items, response.data.items.length / 4),
       nextPage: response.data.next_cursor
     });
   })
