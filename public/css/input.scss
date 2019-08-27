@@ -76,6 +76,7 @@ h1 {
 a:link {
   text-decoration: none;
 }
+
 nav.navbar {
   background-color: $primary-color;
   height: 10%;
@@ -94,8 +95,8 @@ body {
 .navbar-container {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin-top: 10px;
+  margin-bottom: 5px;
   width: 200px;
   height: 90%;
   text-align: center;
@@ -145,6 +146,7 @@ body {
   color: #ffffff;
   border-radius: 4px;
   text-align: center;
+  width: 0%;
 }
 
 .animated-bar2 {
