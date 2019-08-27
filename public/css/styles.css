@@ -1,3 +1,20 @@
+@media only screen and (max-device-width: 640px) {
+  body {
+    font-size: 16px; }
+
+  h1 {
+    font-size: 33px; }
+
+  .page-btn {
+    display: flex;
+    transition: background-color 0.5s;
+    height: 25px;
+    border-radius: 4px;
+    cursor: pointer; } }
+h1 {
+  font-size: 33px;
+  margin: 1%; }
+
 .subpopulation-response {
   color: #808080; }
 
@@ -49,17 +66,17 @@ body {
   font-family: Roboto; }
 
 .navbar-title {
-  text-align: center;
-  vertical-align: middle;
-  display: block;
-  margin: 10%; }
+  text-align: center; }
 
 .navbar-container {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
   width: 200px;
   height: 90%;
-  text-align: center; }
+  text-align: center;
+  vertical-align: middle; }
 
 .justify-content-center {
   justify-content: center; }
