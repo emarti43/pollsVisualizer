@@ -21,7 +21,7 @@ function onScroll(element) {
   let progressBars = document.querySelectorAll('.progress-bar');
 
   progressBars.forEach(function(progressBar) {
-    if (isInViewport(progressBar) && !progressBar.getAttribute('has-animated') && progressBar.parentElement.style.display !== 'none') {
+    if (isInViewport(progressBar) && !progressBar.getAttribute('has-animated') && progressBar.style.offsetHeight !== 0) {
       progressBar.animate([
         {width: 0},
         {width: progressBar.getAttribute('total-width')}

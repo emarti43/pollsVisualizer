@@ -18,7 +18,7 @@ each pollChunk, i in items
                     div
                       h6 #{response.pollster_label}
                       div(class="progress" )
-                        div(class="progress-bar " + ((i === 0) ? "": "d-none") role ="progressbar" aria-valuenow=response.value aria-valuemin="0" aria-valuemax= subpopulation.responses.map(obj => obj.value).reduce((acc, response) => acc + response)) #{response.value}
+                        div(class="progress-bar" role ="progressbar" aria-valuenow=response.value aria-valuemin="0" aria-valuemax= subpopulation.responses.map(obj => obj.value).reduce((acc, response) => acc + response)) #{response.value}
     div(class="container center")
       btn(class="page-btn btn justify-content-center")
         i(class="material-icons") arrow_downward
