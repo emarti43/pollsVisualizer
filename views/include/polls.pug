@@ -6,7 +6,7 @@ each pollChunk, i in items
         h4
           span #{poll.survey_house}  
           span(class="badge bg-primary")
-            a(href=poll.url class="text-light") Link to poll
+            a(href=poll.url class="text-white") Link to poll
         each question in poll.poll_questions
           div(class="poll-question-" + i)
             h5 #{question.text}
@@ -19,6 +19,6 @@ each pollChunk, i in items
                       h6 #{response.pollster_label}
                       div(class="progress" )
                         div(class="progress-bar" role ="progressbar" aria-valuenow=response.value aria-valuemin="0" aria-valuemax= subpopulation.responses.map(obj => obj.value).reduce((acc, response) => acc + response)) #{response.value}
-    div(class="container text-center")
-      btn(class="btn btn-light show-btn justify-content-center"+ ((i == 0) ? "": "d-none"))
+    div(class="container center")
+      btn(class="page-btn btn justify-content-center")
         i(class="material-icons") arrow_downward

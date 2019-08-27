@@ -1,12 +1,21 @@
-$theme-colors: (
-  "primary": #0000ff,
-  "danger": #ff4136
-);
+$primary-color: #aaaaff;
+$primary-darken-1: #9c65c9;
+$primary-darken-2: #5e3085;
+$primary-darken-3: #390f61;
 
-@import '../../node_modules/bootstrap/scss/bootstrap';
+$body-color: white;
 
-.subpopulation-responses {
+
+.subpopulation-response {
   color: #808080;
+}
+
+.bg-grey {
+  background-color: #b0b0b0;
+}
+
+.bg-white {
+  background-color: white;
 }
 
 .response-bar {
@@ -18,5 +27,160 @@ $theme-colors: (
 }
 
 .approve {
-  color: #00ff00;  
+  color: #00ff00;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.bg-primary {
+  background-color: $primary-color;
+}
+
+.text-white {
+  color: white;
+}
+
+.btn:hover {
+  background-color: $primary-darken-1;
+}
+
+.badge {
+  border-radius: 5px;
+  padding: 5px;
+  transition: background-color 0.5s;
+}
+.badge:hover {
+  background-color: $primary-darken-1;
+}
+a:link {
+  text-decoration: none;
+}
+nav.navbar {
+  background-color: $primary-color;
+  height: 10%;
+  align-content: center;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto;
+}
+
+.navbar-title {
+  text-align: center;
+  vertical-align: middle;
+  display: block;
+  margin: 10%;
+}
+
+.navbar-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 90%;
+  text-align: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.container {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 30px;
+  margin-bottom: 30px
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.page-btn {
+  display: flex;
+  transition: background-color 0.5s;
+  height: 25px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.center {
+  align-content: center;
+  vertical-align: middle;
+}
+
+.animated-bar1 {
+  animation: transition-width-1 1s;
+  width: 45%;
+  background-color: #9c65c9;
+}
+
+.progress-bar {
+  background-color: $primary-color;
+  color: #ffffff;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.animated-bar2 {
+  animation: transition-width-2 1s;
+  width: 85%;
+  background-color: #5e3085;
+}
+
+.pagination {
+  text-align: center
+}
+
+.page-item {
+  display: inline-block;
+  border-style: solid;
+  border-width: 0.1px;
+  transition: background-color 0.5s;
+}
+
+.page-item:hover {
+  background-color: $primary-darken-1;
+}
+
+.animated-bar3 {
+  animation: transition-width-3 1s;
+  width: 55%;
+  background-color: #8e56bf;
+}
+ul {
+  list-style-type: none;
+}
+
+@keyframes transition-width-1 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 45%;
+  }
+}
+
+@keyframes transition-width-2 {
+  from {
+    width: 0%;
+  }
+  to {
+    widtht: 85%;
+  }
+}
+
+@keyframes transition-width-3 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 55%;
+  }
 }

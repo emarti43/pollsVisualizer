@@ -2,17 +2,20 @@
 head
   title= title
 
-  link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
   link(rel="stylesheet" href="./css/styles.css")
   link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+  link(href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet")
 html
-  nav(class="navbar navbar-expand-lg navbar-light bg-primary blue animate-nav")
-    a(class="navbar-brand text-light" href="#") #{title}
-    div(class="bg-warning")
-      div(class="animated-poll")
+  nav(class="navbar")
+    div(class="navbar-container left center")      
+      h2(class="text-white navbar-title" href="#") #{title}
+    div(class="navbar-container right")
+      div(class="animated-bar1") &nbsp;
+      div(class="animated-bar2") &nbsp;
+      div(class="animated-bar3") &nbsp;
   include include/polls.pug
   nav(aria-label="..." class="d-none" id="pagination")
-    ul(class="pagination pagination-sm justify-content-center")
+    ul(class="pagination pagination-sm center")
       li(class="page-item disabled" aria-current="page")
         a(class="page-link") Previous
       li(class="page-item" aria-current="page")

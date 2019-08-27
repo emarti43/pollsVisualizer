@@ -19,7 +19,6 @@ function chunkArray(array, chunkSize) {
 app.get('/:cursor?', (req, res) => {
   let cursor = '';
   if(!!req.params.cursor) {
-    console.log(`cursor from params${req.params.cursor}`);
     cursor = req.params.cursor;
   }
   axios.get(baseURL + `polls?cursor=${cursor}`)
