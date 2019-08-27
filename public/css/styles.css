@@ -108,12 +108,18 @@ body {
 
 .page-item {
   display: inline-block;
-  border-style: solid;
-  border-width: 0.1px;
-  transition: background-color 0.5s; }
+  border: 1px solid grey;
+  transition: background-color 0.5s;
+  padding: 5px; }
 
-.page-item:hover {
-  background-color: #9c65c9; }
+.left-page-item {
+  border-radius: 0.25rem 0rem 0rem 0.25rem; }
+
+.right-page-item {
+  border-radius: 0rem 0.25rem 0.25rem 0rem; }
+
+.active:hover {
+  background-color: #aaaaff; }
 
 .animated-bar3 {
   animation: transition-width-3 1s;

@@ -140,13 +140,19 @@ body {
 
 .page-item {
   display: inline-block;
-  border-style: solid;
-  border-width: 0.1px;
+  border: 1px solid grey;
   transition: background-color 0.5s;
+  padding: 5px;
+}
+.left-page-item {
+  border-radius: 0.25rem 0rem 0rem 0.25rem;
+}
+.right-page-item {
+  border-radius: 0rem 0.25rem 0.25rem 0rem;
 }
 
-.page-item:hover {
-  background-color: $primary-darken-1;
+.active:hover {
+  background-color: $primary-color;
 }
 
 .animated-bar3 {
