@@ -16,7 +16,8 @@ html
     div(class="navbar-container right")
       h2(class="text-white navbar-title" href="#") #{title}
     
-  include include/polls.pug
+  div(class="container")
+    include include/polls.pug
   nav(aria-label="..." class="d-none" id="pagination")
     ul(class="pagination pagination-sm center")
       li(class="page-item disabled left-page-item" aria-current="page")

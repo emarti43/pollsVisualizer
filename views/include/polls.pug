@@ -2,7 +2,7 @@
 each pollChunk, i in items
   div(class="poll-chunk " + ((i == 0) ? "": "d-none") id=i)
     each poll in pollChunk
-      div(class="container")
+      div
         h4
           span #{poll.survey_house}  
           span(class="badge bg-primary")

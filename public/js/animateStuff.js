@@ -26,7 +26,7 @@ function onScroll(element) {
         {width: 0},
         {width: progressBar.getAttribute('total-width')}
       ], {
-        duration: 1000,
+        duration: 700,
         easing: 'ease-out',
       });
       progressBar.setAttribute('style', `width: ${progressBar.getAttribute('total-width')};`)
